@@ -65,7 +65,9 @@ chmod 400 key.pem
 #### Established an SSH connection to the vpc_1 instance:
 
 <img width="579" height="134" alt="Screenshot 2026-08-31 001740" src="https://github.com/user-attachments/assets/ec4a6fd5-cfea-45df-9c6f-90120256b079" />
+
 ---
+
  #### Result: Internet access failed as expected because the private subnet has no Internet Gateway (IGW) or NAT Gateway attached.
  ```
 ping 8.8.8.8
