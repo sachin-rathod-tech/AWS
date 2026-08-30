@@ -53,11 +53,13 @@
 * **After allowing ICMP traffic, low-latency connectivity with 0% Packet Loss was successfully established across all VPCs:**
 
 <img width="640" height="332" alt="Screenshot 2026-08-31 000738" src="https://github.com/user-attachments/assets/03c70ba6-c86f-49d3-9907-ad1f90c29709" />
+
 ---
 
 ### Step 7: SSH Jump Host Configuration (Connecting to vpc_1)
 * Configured SSH access from the Management Bastion Instance (168.192.1.229) to Private VPC 1 (10.1.10.114):**
 * Saved the private key (key.pem) on the Bastion Host.
+  
 #### Restricted key file permissions
 ```
 chmod 400 key.pem
