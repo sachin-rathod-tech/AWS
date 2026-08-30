@@ -72,5 +72,5 @@ ping 8.8.8.8
 ```
 <img width="608" height="309" alt="Screenshot 2026-08-31 001803" src="https://github.com/user-attachments/assets/4296e7d8-daab-4d91-9f5a-9870c46a20f9" />
 
-#### Internal Inter-VPC Connectivity Test (Success):
+####  Connectivity Test (Success):
 
