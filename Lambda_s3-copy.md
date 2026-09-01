@@ -9,29 +9,31 @@ This project demonstrates an automated event-driven architecture on AWS. Wheneve
 
 ---
 
-## 1 🏗️ Architecture Diagram Overview
+## 🏗️ Architecture Diagram Overview
 
+```text
 [ User / Application ]
-│
-▼ (Uploads File)
-┌──────────────────────────┐
-│   Source S3 Bucket       │
-│ (my-source-bucket-lab1)  │
-└─────────┬────────────────┘
-│
-│ (s3:ObjectCreated Notification)
-▼
-┌──────────────────────────┐
-│   AWS Lambda Function    │ ◄── [ IAM Execution Role ]
-│  (S3FileCopyFunction)    │     (GetObject & PutObject)
-└─────────┬────────────────┘
-│
-│ (boto3: copy_object)
-▼
-┌──────────────────────────┐
-│ Destination S3 Bucket    │
-│(my-destination-bucket2)  │
-└──────────────────────────┘
+          │
+          ▼ (Uploads File)
+┌────────────────────────────────────────┐
+│   Source S3 Bucket                     │
+│   (my-source-bucket-lab1)              │
+└──────────────────┬─────────────────────┘
+                   │
+                   │ (s3:ObjectCreated Notification)
+                   ▼
+┌────────────────────────────────────────┐
+│   AWS Lambda Function                  │ ◄── [ IAM Execution Role ]
+│   (S3FileCopyFunction)                 │     (GetObject & PutObject)
+└──────────────────┬─────────────────────┘
+                   │
+                   │ (boto3: copy_object)
+                   ▼
+┌────────────────────────────────────────┐
+│   Destination S3 Bucket                │
+│   (my-destination-bucket-lab2)         │
+└────────────────────────────────────────┘
+```
 ---
 
 ## 🚀 Key Features
@@ -76,7 +78,7 @@ Attach an inline policy to the Lambda execution role to grant necessary S3 permi
 ---
 
 ## 3. Deploy AWS Lambda Code
-```json
+```
 import boto3
 import urllib.parse
 
