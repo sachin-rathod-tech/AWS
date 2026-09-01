@@ -52,6 +52,7 @@ This project demonstrates an automated event-driven architecture on AWS. Wheneve
 * **Destination Bucket:** `my-destination-bucket-lab2`
 
 ### 2. Configure IAM Policy & Role
+* **IAM Console -> Policies -> Create policy par click karein.**
 Attach an inline policy to the Lambda execution role to grant necessary S3 permissions:
 
 ```json
@@ -76,9 +77,11 @@ Attach an inline policy to the Lambda execution role to grant necessary S3 permi
 }
 ```
 ---
+<img width="1274" height="367" alt="image" src="https://github.com/user-attachments/assets/24fa4e97-dfa2-477c-9bf7-df16d2cbee3d" />
+
 
 ## 3. Deploy AWS Lambda Code
-```
+```bash
 import boto3
 import urllib.parse
 
@@ -119,6 +122,8 @@ def lambda_handler(event, context):
    * **Bucket:** Select your source bucket (`my-source-bucket-lab1`).
    * **Event type:** Select **All object create events** (`s3:ObjectCreated:*`).
 4. Acknowledge the recursive invocation warning checkbox and click **Add**.
+
+<img width="1224" height="406" alt="image" src="https://github.com/user-attachments/assets/77d3d820-9382-4d29-8dfc-206b28666775" />
 
 ---
 
